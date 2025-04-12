@@ -11,6 +11,7 @@
     body {
       margin: 0;
       padding: 0;
+      padding-bottom: 60px; /* Reduced to match footer height */
       font-family: 'Poppins', sans-serif;
       background-color: #1A2634; /* Dark blue background */
       color: #ffffff;
@@ -27,7 +28,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: -1;
+      z-index: 2; /* Increased to be above footer */
     }
 
     /* Additional Wrapper for Overlapping Circles */
@@ -38,7 +39,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: -1;
+      z-index: 2; /* Increased to be above footer */
     }
 
     /* Base Circle Styling */
@@ -53,7 +54,7 @@
       border: 2px solid #00C4B4;
       border-radius: 50%;
       opacity: 0.4;
-      z-index: -1;
+      z-index: 2; /* Increased to be above footer */
     }
 
     /* Overlapping Circles Styling */
@@ -64,7 +65,7 @@
       width: 50px;
       height: 50px;
       opacity: 0.4;
-      z-index: -1;
+      z-index: 2; /* Increased to be above footer */
     }
 
     /* Top-Left Circle (Diagonal Lines, First Circle) */
@@ -123,7 +124,7 @@
 
     /* Bottom-Left Circle (Dots, First Circle) */
     .corner-circles-wrapper::after {
-      bottom: 12.5px;
+      bottom: 70px; /* Adjusted to be above the footer */
       left: 0;
       background: radial-gradient(
         circle,
@@ -135,7 +136,7 @@
 
     /* Bottom-Left Overlapping Circle (Cut Circle with Background on Top, Dashed on Bottom) */
     .corner-circles-wrapper-2::before {
-      bottom: 20px;
+      bottom: 77.5px; /* Adjusted to be above the footer */
       left: 7.5px;
       border: 2px dashed #00C4B4;
       border-top: none;
@@ -146,7 +147,7 @@
 
     /* Bottom-Right Circle (Diagonal Lines, First Circle) */
     body::after {
-      bottom: 12.5px;
+      bottom: 70px; /* Adjusted to be above the footer */
       right: 0;
       background: repeating-linear-gradient(
         45deg,
@@ -159,7 +160,7 @@
 
     /* Bottom-Right Overlapping Circle (Thick Border on Top, Diagonal Lines on Bottom) */
     .corner-circles-wrapper-2::after {
-      bottom: 20px;
+      bottom: 77.5px; /* Adjusted to be above the footer */
       right: 7.5px;
       border: 4px solid #00C4B4;
       border-bottom: none;
@@ -367,6 +368,35 @@
     .navbar .container {
       position: relative;
     }
+
+    /* Footer Styling */
+    footer {
+      background-color: rgba(26, 38, 52, 0.9); /* Semi-transparent background */
+      text-align: center;
+      padding: 15px; /* Reduced padding to minimize overlap */
+      color: #aaa;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1; /* Kept at 1, below the circles */
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #00C4B4;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #FF5733;
+    }
   </style>
 </head>
 <body>
@@ -377,7 +407,7 @@
 <!-- Logo Section -->
 <div class="logo-section">
   <!-- Placeholder for the logo icon (replace with actual image) -->
-  <img src="image/logo.png" alt="Logo Icon" width="200" height="200">
+  <img src="image/logo.png" alt="Logo Icon" width="50" height="50">
   <h1>
     BA GLOBAL
     <br>
@@ -473,6 +503,16 @@
   <h1>QUALITY. VALUE. SERVICE.</h1>
   <p>Small Business, Big Impact.</p>
 </section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 BA Global. All Rights Reserved.</p>
+  <div>
+    <a href="index.html">Home</a> |
+    <a href="#">Services</a> |
+    <a href="#">Contact</a>
+  </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
